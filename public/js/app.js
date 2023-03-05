@@ -6444,6 +6444,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -6483,9 +6492,8 @@ __webpack_require__.r(__webpack_exports__);
       });
     }
   },
-  mounted: function mounted() {
-    // this.getCats(),
-    return this.$store.dispatch("fetchpro");
+  mounted: function mounted() {//this.address()
+    //return this.$store.dispatch("fetchpro")
   },
   computed: {
     allpro: function allpro() {
@@ -59619,89 +59627,135 @@ var staticRenderFns = [
                 _c("div", { staticClass: "col-sm-2" }),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-sm-8 mt-5 image" }, [
-                  _c("form", { staticClass: "w-100" }, [
-                    _c("div", { staticClass: "row text-center" }, [
-                      _c("div", { staticClass: "col-sm-5" }, [
-                        _c("input", {
-                          staticClass: "form-control d-inline",
-                          staticStyle: { height: "42px" },
-                          attrs: {
-                            type: "text",
-                            name: "search",
-                            placeholder: "Enter a location...",
+                  _c(
+                    "form",
+                    {
+                      staticClass: "w-100",
+                      attrs: { action: "search", method: "get" },
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "row py-4 px-5 rounded text-center",
+                          staticStyle: { background: "black" },
+                        },
+                        [
+                          _c("div", { staticClass: "col-sm-5" }, [
+                            _c("input", {
+                              staticClass: "form-control d-inline",
+                              staticStyle: { height: "42px" },
+                              attrs: {
+                                id: "searchbox",
+                                required: "",
+                                onkeyup: "suggest(this.value);",
+                                type: "text",
+                                name: "search",
+                                value: "",
+                                placeholder: "Enter a location...",
+                              },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-sm-4" }, [
+                            _c("div", { staticClass: "dropdown" }, [
+                              _c(
+                                "button",
+                                {
+                                  staticClass:
+                                    "w-100 py-2 btn btn-light dropdown-toggle",
+                                  attrs: {
+                                    type: "button",
+                                    id: "dropdownMenuButton",
+                                    "data-toggle": "dropdown",
+                                    "aria-haspopup": "true",
+                                    "aria-expanded": "false",
+                                  },
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                       Add a service\n                      "
+                                  ),
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "dropdown-menu",
+                                  attrs: {
+                                    "aria-labelledby": "dropdownMenuButton",
+                                  },
+                                },
+                                [
+                                  _c("p", { staticClass: "dropdown-item" }, [
+                                    _c("input", {
+                                      attrs: {
+                                        type: "checkbox",
+                                        name: "services[]",
+                                        value: "Catering",
+                                      },
+                                    }),
+                                    _vm._v(" Catering"),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("p", { staticClass: "dropdown-item" }, [
+                                    _c("input", {
+                                      attrs: {
+                                        type: "checkbox",
+                                        name: "services[]",
+                                        value: "Clowns",
+                                      },
+                                    }),
+                                    _vm._v(" Clowns"),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("p", { staticClass: "dropdown-item" }, [
+                                    _c("input", {
+                                      attrs: {
+                                        type: "checkbox",
+                                        name: "services[]",
+                                        value: "Dancers",
+                                      },
+                                    }),
+                                    _vm._v(" Dancers"),
+                                  ]),
+                                ]
+                              ),
+                            ]),
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-sm-2" }, [
+                            _c(
+                              "button",
+                              {
+                                staticClass: "bg-danger rounded-circle",
+                                staticStyle: { width: "40px", height: "40px" },
+                                attrs: { type: "submit" },
+                              },
+                              [
+                                _c("i", {
+                                  staticClass: "fas text-light fa-search",
+                                }),
+                              ]
+                            ),
+                          ]),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", {
+                          staticStyle: {
+                            width: "41%",
+                            "z-index": "1000",
+                            height: "600px",
+                            position: "absolute",
                           },
+                          attrs: { id: "result_list" },
                         }),
                       ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-sm-4" }, [
-                        _c("div", { staticClass: "dropdown" }, [
-                          _c(
-                            "button",
-                            {
-                              staticClass:
-                                "w-100 py-2 btn btn-light dropdown-toggle",
-                              attrs: {
-                                type: "button",
-                                id: "dropdownMenuButton",
-                                "data-toggle": "dropdown",
-                                "aria-haspopup": "true",
-                                "aria-expanded": "false",
-                              },
-                            },
-                            [
-                              _vm._v(
-                                "\n                       Add a service\n                      "
-                              ),
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "dropdown-menu",
-                              attrs: {
-                                "aria-labelledby": "dropdownMenuButton",
-                              },
-                            },
-                            [
-                              _c("p", { staticClass: "dropdown-item" }, [
-                                _c("input", {
-                                  attrs: { type: "checkbox", name: "services" },
-                                }),
-                                _vm._v(" Catering"),
-                              ]),
-                              _vm._v(" "),
-                              _c("p", { staticClass: "dropdown-item" }, [
-                                _c("input", {
-                                  attrs: { type: "checkbox", name: "services" },
-                                }),
-                                _vm._v(" Clowns"),
-                              ]),
-                              _vm._v(" "),
-                              _c("p", { staticClass: "dropdown-item" }, [
-                                _c("input", {
-                                  attrs: { type: "checkbox", name: "services" },
-                                }),
-                                _vm._v(" Dancers"),
-                              ]),
-                            ]
-                          ),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-sm-2" }, [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "bg-danger rounded-circle",
-                            staticStyle: { width: "40px", height: "40px" },
-                            attrs: { type: "submit" },
-                          },
-                          [_c("i", { staticClass: "fas text-light fa-search" })]
-                        ),
-                      ]),
-                    ]),
-                  ]),
+                    ]
+                  ),
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-sm-2" }),

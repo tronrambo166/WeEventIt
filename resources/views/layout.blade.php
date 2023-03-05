@@ -17,7 +17,7 @@
     <link href='http://fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
 
    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-   <link href="{{ asset('/css/style.css') }}" rel="stylesheet" type="text/css" media="all"/>
+   <link href="{{ asset('/css/style.css') }}" rel="stylesheet"/>
 
     
 <!-- {{-- Vue component files --}}
@@ -45,6 +45,7 @@
     <div class="col-sm-8  ">
    <div class="navbar navbar-expand-sm p-0 navy float-right ">
        <ul class="navbar-nav">
+        
                     <li class="nav-item py-1 px-3 text-light  "><router-link to="/home" class="text-light nav-link">Create service</router-link></li>
 
                     <li class="nav-item py-1 px-3 text-light"><router-link to="/products" class="text-light nav-link">Create event
@@ -80,11 +81,6 @@
                 </ul>
                 </div>
 
-        @php use App\Models\Cart; $cart=Cart::get(); $carts=count($cart); @endphp
-        @auth
-        @php
-        $user_id=Auth::user()->id; @endphp
-          @endauth
         
         
         
@@ -98,8 +94,12 @@
     </div>
     
 
-    <div class="row"> 
-    <router-view></router-view>
+    <div class="row">
+  @if (request()->is('search')) 
+   @yield('page')
+   @else
+    <router-view></router-view> 
+    @endif
      </div>
 
     
@@ -157,6 +157,41 @@
 
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    function suggest(search){  $("#result_list").html('');  
+        var searchText=search;
+
+$.ajax({
+url:'get_suggest/'+searchText,
+method:'get',
+dataType:'json',
+                success: function (response) {
+                    console.log(response);
+                
+               for (i=0; i < 10; i++){ //console.log(response.data[i].name);
+                    var name=response.data[i].name;
+                    var city=response.data[i].city;
+                    var country=response.data[i].country;
+
+        $("#result_list").append(' <div onclick="address(\'' + name +','+ city +','+ country + '\');" style="" data-id="'+response.data[i].name+'" class="address  py-0 my-0 border broder-dark bg-light shadow single_comms">  <h6 class="font-weight-bold text-dark d-inline" ><i class="fa fa-map-marker text-success" aria-hidden="true"></i> '+name+'</h6> <p  class="d-inline text-dark"> Loc: <small>'+city+', '+country+'</small> </p> </div>');
+
+
+
+                        }  
+                    //document.getElementById('result_list').style.overflowY="scroll";   
+
+     },
+      error:function(error){  console.log(error);}
+
+});
+
+    }
+
+  
+</script>
+
+
     
 <script type="text/javascript" src="js/app.js"></script>
  <!-- {{-- Vue files --}}
@@ -168,10 +203,15 @@
 <script type="text/javascript" src="js/routerCode.js"></script>
 {{-- Vue files --}}  -->
 
-<script type="text/javascript">
-    
-</script>
 
+<script type="text/javascript">
+    function address(place){
+        //var place = $(this).attr('data-id');
+        document.getElementById('searchbox').value = place;
+        $("#result_list").html('');
+}
+
+</script>
 
 
 </body>

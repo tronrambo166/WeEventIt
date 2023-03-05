@@ -46,6 +46,9 @@ Route::post('admin/logout', 'AdminController@adminLogout')->name('admin/logout')
 
 Route::get('/', 'PagesController@home'); 
 Route::get('/home', 'PagesController@home'); 
+Route::get('/get_suggest/{search}', 'PagesController@getAddress')->name('get_suggest');
+Route::get('search', 'PagesController@search')->name('search');
+
 Route::get('forgot/{remail}', 'testController@forgot')->name('forgot');
 Route::post('send_reset_email', 'testController@send_reset_email')->name('send_reset_email');
 Route::post('reset/{remail}', 'testController@reset')->name('reset');

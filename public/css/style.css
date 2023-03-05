@@ -102,27 +102,6 @@
 	
 	}
 
-  .home_bg{
-    height: 400px;
-    margin-top: 15px;
-    background: url(images/background.jpg) no-repeat;
-    background-size: 39px 28px;
-    background-position: center left;
-}
-	
-	.single_l {
-    margin-right: -12px;
-}
-
-.single_r {
-    margin-left: -12px;
-}
-
-	.sec1 {
-    padding: 0 5px;
-}
-	
-	
 	
 	
 	
@@ -222,7 +201,15 @@
 		
 		.fix{ overflow:hidden;}
 		
-		
+	.home_bg{
+    height: 700px;
+    margin-top: 15px;
+    background: url(../images/background.jpg) no-repeat;
+    background-size: 80% 700px;
+    background-position: center center;
+}
+ .how, .how li a{font-family: system-ui;}
+ .extraDiv{background: black;}
 		
 		
 		

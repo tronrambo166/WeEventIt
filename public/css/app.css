@@ -10850,17 +10850,3 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-
- .home_bg{
-    height: 700px;
-    margin-top: 15px;
-    background: url(../images/background.jpg) no-repeat;
-    background-size: 80% 700px;
-    background-position: center center;
-      border-radius: 50px;
-  border: none;
-}
-
-.extraDiv{background: black;}
-.how,.how li a{font-family: system-ui; font-weight: bold;}
-
