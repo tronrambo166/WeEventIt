@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid mx-0" id="" style="background:black;">
         
-         
+          
         <div class="heading" style="background:black;"> 
                     
 

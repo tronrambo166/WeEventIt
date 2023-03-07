@@ -64,6 +64,16 @@ return view('events',compact('events'));
 }
 
 
+public function event($id){
+$event = Events::where('id',$id)->first();
+return view('event',compact('event'));
+
+}
+
+public function booking_request(Request $request){
+    return $request->all();
+}
+
 public function updateProfile(Request $req, $id){
        
  // if (Auth::attempt(['email' => $request['email'], 'password' => $request['password']])) {

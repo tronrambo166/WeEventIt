@@ -37,13 +37,53 @@
     <div class="row px-0 " style="background: black;">
     
      <div class="col-sm-4">
-      <a href="home"><img class="" src="images/we-event-it-white-web-logo-v2.png" width="216px" height="50px" style="margin-left: 130px;"></a>
+      <a href="home"><img class="" src="{{asset('images/we-event-it-white-web-logo-v2.png')}}" width="216px" height="50px" style="margin-left: 130px;"></a>
      </div>
 
     
     
     <div class="col-sm-8  ">
    <div class="navbar navbar-expand-sm p-0 navy float-right ">
+
+  
+    <ul class="navbar-nav">
+        
+                    <li class="nav-item py-1 px-3 text-light  "><a href ="./home" class="text-light nav-link">Create service</a></li>
+
+                    <li class="nav-item py-1 px-3 text-light"><a href="./products" class="text-light nav-link">Create event
+                    </a></li>
+
+                    <li class="nav-item py-1 px-3 text-light "><a href="./cart" class="text-light nav-link">events</a></li>
+
+
+                    <li class="nav-item py-1 px-3 text-light "><a href="./contacts" class="text-light nav-link">Profile</a></li>
+
+                    <li class="nav-item py-1 px-3 text-light ">
+                        @guest
+    @if (Route::has('login'))
+
+     <a class=" d-inline my-0 h5 bg-light mt-2 d-inline-block text-center" href="{{ route('login') }}" ><b>Log In</b></a> @endif
+
+     @else
+     {{-- <a class="w-100 my-0 h5 text-info mt-2 d-inline-block text-center" href="{{url('profile/'.$user_id)}}">
+        <b>Profile</b></a>  --}}
+
+         <div class="text-center w-50 d-inline">  
+            <a class="text-center w-50 d-inline" href="route('logout')" 
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                {{ __('Log Out') }}
+            </a> </div>
+        <form  class="d-inline" method="POST" action="{{ route('logout') }}">
+                                                                 @csrf</form>
+                    
+        @endguest
+                    </li>
+
+                </ul>
+     <!--
+
+
        <ul class="navbar-nav">
         
                     <li class="nav-item py-1 px-3 text-light  "><router-link to="/home" class="text-light nav-link">Create service</router-link></li>
@@ -78,7 +118,9 @@
         @endguest
                     </li>
 
-                </ul>
+                </ul> -->
+                
+
                 </div>
 
         
@@ -98,7 +140,8 @@
   @if (request()->is('search')) 
    @yield('page')
    @else
-    <router-view></router-view> 
+   <!-- <router-view></router-view> -->
+   @yield('page')
     @endif
      </div>
 
@@ -152,7 +195,8 @@
 
 
 
- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> 
+ <!-- <script src="https://code.jquery.com/jquery-3.6.0.js"></script> -->
        
 
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -213,6 +257,73 @@ dataType:'json',
 
 </script>
 
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+$( function() {
+
+$( "#datepicker" ).datepicker();
+
+//Start
+$( "#datepicker" ).datepicker({dateFormat: "yy-mm-dd"});
+var dateFormat = $( "#datepicker" ).datepicker( "option", "dateFormat" );
+$( "#datepicker" ).datepicker( "option", "dateFormat", "yy-mm-dd" );
+//Min Date
+$( "#datepicker" ).datepicker({
+  minDate: new Date()
+});
+var minDate = $( "#datepicker" ).datepicker( "option", "minDate" );
+$( "#datepicker" ).datepicker( "option", "minDate", new Date() );
+
+//End
+$( "#datepicker2" ).datepicker({dateFormat: "yy-mm-dd"});
+var dateFormat = $( "#datepicker2" ).datepicker( "option", "dateFormat" );
+$( "#datepicker2" ).datepicker( "option", "dateFormat", "yy-mm-dd" );
+//Min Date
+$( "#datepicker2" ).datepicker({
+  minDate: new Date()
+});
+var minDate = $( "#datepicker2" ).datepicker( "option", "minDate" );
+$( "#datepicker2" ).datepicker( "option", "minDate", new Date() );
+
+  } );
+
+
+ //if(currentDate !=null) console.log(currentDate);
+
+  </script>
+
+  <script type="text/javascript">
+      //EndDate
+$("#datepicker2").datepicker({
+                onSelect: function (date, datepicker) {
+                    var date_start = $('#datepicker').val();
+                    if (date != "") {
+                        if(date_start > date)
+                            alert('End date cannot be earlier than start date!!')
+                        const date1 = new Date(date_start);
+                        const date2 = new Date(date);
+                        const diffTime = Math.abs(date2 - date1);
+                        var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                        diffDays = diffDays+1; 
+                        $('#days').html(diffDays);
+
+                        var per_day = $('#per_day').val();
+                        var price = (per_day*diffDays);
+                        var s_fee = 200; var total = price + s_fee;
+                        $('#price').html('$'+price);
+                        $('#total_price').html('$'+total);
+                        $('#t_price').html('$'+total);
+                        $('#due').html('$'+total);
+                      
+                    }
+                }
+            });
+ 
+  </script>
 
 </body>
 </html>

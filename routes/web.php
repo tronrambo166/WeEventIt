@@ -48,6 +48,8 @@ Route::get('/', 'PagesController@home');
 Route::get('/home', 'PagesController@home'); 
 Route::get('/get_suggest/{search}', 'PagesController@getAddress')->name('get_suggest');
 Route::get('search', 'PagesController@search')->name('search');
+Route::get('event/{id}', 'PagesController@event')->name('event');
+Route::post('booking_request', 'PagesController@booking_request')->name('booking_request');
 
 Route::get('forgot/{remail}', 'testController@forgot')->name('forgot');
 Route::post('send_reset_email', 'testController@send_reset_email')->name('send_reset_email');

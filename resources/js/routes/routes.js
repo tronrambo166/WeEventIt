@@ -2,7 +2,7 @@ import home from '../components/site/home.vue'
 import products from '../components/site/products.vue'
 import cart from '../components/site/cart.vue'
 import contact from '../components/site/contact.vue'
-import details from '../components/site/details.vue'
+import event from '../components/site/event.vue'
 
 //ADMIN COMPONENTS
 import addcat from '../components/admin/category/addcat.vue'
@@ -20,7 +20,7 @@ export const routes=[
 { path:'/products', component: products},
 { path:'/cart', component: cart},
 { path:'/contacts', component: contact},
-{ path:'/details/:id', component: details},
+{ path:'/event/:id', component: event},
 
 //ADMIN ROUTES
 {path:'/add-category', component: addcat},
