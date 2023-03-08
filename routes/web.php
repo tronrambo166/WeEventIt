@@ -45,9 +45,16 @@ Route::post('admin/logout', 'AdminController@adminLogout')->name('admin/logout')
 //MAIN
 
 Route::get('/', 'PagesController@home'); 
-Route::get('/home', 'PagesController@home'); 
+Route::get('/home', 'PagesController@home')->name('home'); 
+Route::get('/create-event', 'PagesController@create_event')->name('create-event'); 
+Route::get('/create-service','PagesController@create_service')->name('create-service');
+Route::post('/create-event', 'PagesController@save_event')->name('create-event-post');
+Route::post('/create-service','PagesController@save_service')->name('create-service-post');
+Route::get('all-events', 'PagesController@all_events')->name('all-events');
+
 Route::get('/get_suggest/{search}', 'PagesController@getAddress')->name('get_suggest');
 Route::get('search', 'PagesController@search')->name('search');
+
 Route::get('event/{id}', 'PagesController@event')->name('event');
 Route::post('booking_request', 'PagesController@booking_request')->name('booking_request');
 

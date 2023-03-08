@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Events;
+use App\Models\Images;
 use App\Models\User;
 use App\Models\Cart;
 use App\Models\Savelist;
@@ -67,6 +68,85 @@ return view('events',compact('events'));
 public function event($id){
 $event = Events::where('id',$id)->first();
 return view('event',compact('event'));
+
+}
+
+public function all_events(){
+$events = Events::latest()->get();
+return view('all_events',compact('events'));
+
+}
+
+public function create_event(){
+$events = Events::latest()->get();
+return view('create_event',compact('events'));
+
+}
+
+public function create_service(){
+$events = Events::latest()->get();
+return view('create_service',compact('events'));
+
+}
+
+public function save_event(Request $request){
+$name = $request->name;
+$type = $request->type;
+$category = $request->category;
+$event_type = $request->event_type;
+$isFree = $request->isFree;
+$ev_start = $request->ev_start;
+$ev_end = $request->ev_end;
+$details = $request->details;
+$address = $request->address;
+if($request->isFree == 'no'){
+$per_day = $request->per_day;
+$per_hour = $request->per_hour;
+}
+else $per_day = $per_hour =null;
+
+
+Events::create([
+            'name' => $name,
+            'type' => $type,
+            'category' => $category,
+            'event_type' => $event_type,
+            'isFree' => $isFree,
+            'ev_start' => $ev_start,
+            'ev_end' => $ev_end,
+            'details' => $details,
+            'per_day' => $per_day,
+            'per_hour' => $per_hour
+           ]);
+
+          $image=$request->file('posters'); //print_r($image);
+
+          if($image) {
+          foreach ($image as $single_img) { 
+            # code...
+          $uniqid=hexdec(uniqid());
+          $ext=strtolower($single_img->getClientOriginalExtension());
+          $create_name=$uniqid.'.'.$ext;
+          $loc='images/events/';
+          //Move uploaded file
+          $single_img->move($loc, $create_name);
+          $final_img=$loc.$create_name;
+           //getting event id
+          $ev=Events::orderBy('id', 'DESC')->first();
+          $ev_id=($ev->id);
+
+           Images::create([
+            'img_name' => $create_name,
+            'ev_id' => $ev_id
+           ]);
+
+             } }
+
+}
+
+public function save_service(){
+$events = Events::latest()->get();
+return view('create_event',compact('events'));
 
 }
 

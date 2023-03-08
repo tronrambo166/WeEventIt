@@ -220,6 +220,41 @@ input[type="date"]:before {
 input[type="date"]:focus:before {
   content: '' !important;
 }
+input[type="radio"]{
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 24px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background-color: var(--field-white);
+    box-shadow: var(--field-shadow);
+    vertical-align: top;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btnUp {
+  border: 2px solid gray;
+  color: white;
+  background-color: #0eaf5d;
+  padding: 6px 15px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
 		
 		
 		

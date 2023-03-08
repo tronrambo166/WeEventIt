@@ -63,11 +63,11 @@ Vue.filter('substr', (a,b) => {
 import Form from 'vform'
 window.Form = Form;
 
-const app = new Vue({
+/*const app = new Vue({
 el: '.app',
 router, store
 //components: {       'expcomp': httpVueLoader('js/components/ExampleComponent.vue'), },       
-});
+});*/
 
 // const app2 = new Vue({
 // el: '.admin',

@@ -30,7 +30,7 @@
 
      
 
-<div class="app container-fluid"  >
+<div class="apps container-fluid"  >
     
  
     
@@ -48,15 +48,16 @@
   
     <ul class="navbar-nav">
         
-                    <li class="nav-item py-1 px-3 text-light  "><a href ="./home" class="text-light nav-link">Create service</a></li>
+                    <li class="nav-item py-1 px-3 text-light  "><a 
+                        href ="{{route('create-service')}}" class="text-light nav-link">Create service</a></li>
 
-                    <li class="nav-item py-1 px-3 text-light"><a href="./products" class="text-light nav-link">Create event
+                    <li class="nav-item py-1 px-3 text-light"><a href="{{route('create-event')}}" class="text-light nav-link">Create event
                     </a></li>
 
-                    <li class="nav-item py-1 px-3 text-light "><a href="./cart" class="text-light nav-link">events</a></li>
+                    <li class="nav-item py-1 px-3 text-light "><a href="{{route('all-events')}}" class="text-light nav-link">events</a></li>
 
 
-                    <li class="nav-item py-1 px-3 text-light "><a href="./contacts" class="text-light nav-link">Profile</a></li>
+                    <li class="nav-item py-1 px-3 text-light "><a href="{{route('profile')}}" class="text-light nav-link">Profile</a></li>
 
                     <li class="nav-item py-1 px-3 text-light ">
                         @guest
@@ -266,6 +267,8 @@ dataType:'json',
 $( function() {
 
 $( "#datepicker" ).datepicker();
+$( "#datepicker3" ).datepicker();
+$( "#datepicker4" ).datepicker();
 
 //Start
 $( "#datepicker" ).datepicker({dateFormat: "yy-mm-dd"});

@@ -6686,12 +6686,12 @@ Vue.filter('substr', function (a, b) {
 
 
 window.Form = vform__WEBPACK_IMPORTED_MODULE_5__["default"];
-var app = new Vue({
-  el: '.app',
-  router: router,
-  store: store //components: {       'expcomp': httpVueLoader('js/components/ExampleComponent.vue'), },       
-
-}); // const app2 = new Vue({
+/*const app = new Vue({
+el: '.app',
+router, store
+//components: {       'expcomp': httpVueLoader('js/components/ExampleComponent.vue'), },       
+});*/
+// const app2 = new Vue({
 // el: '.admin',
 // router, store
 // //components: {       'expcomp': httpVueLoader('js/components/ExampleComponent.vue'), },       
