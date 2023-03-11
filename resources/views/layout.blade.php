@@ -82,6 +82,10 @@
                     </li>
 
                 </ul>
+
+                @if(Session::has('success'))<div class="font-weight-bold card bg-success text-light px-3">
+                 {{Session::get('success') }} @php Session::forget('success'); @endphp
+            </div> @endif
      <!--
 
 
@@ -155,8 +159,8 @@
 
 
    <!-- @yield('page') -->
-<div class="clearfix py-5 extraDiv"></div>
-<div class="clearfix py-5 extraDiv"></div>
+<div class="container-fluid clearfix py-5 extraDiv"></div>
+<div class="container-fluid clearfix py-5 extraDiv"></div>
 
 <div class="container-fluid extraDiv mt-5 fixed-bottom">
         <div class="container">
@@ -218,6 +222,7 @@ dataType:'json',
                     var name=response.data[i].name;
                     var city=response.data[i].city;
                     var country=response.data[i].country;
+                    $("#result_list").show();
 
         $("#result_list").append(' <div onclick="address(\'' + name +','+ city +','+ country + '\');" style="" data-id="'+response.data[i].name+'" class="address  py-0 my-0 border broder-dark bg-light shadow single_comms">  <h6 class="font-weight-bold text-dark d-inline" ><i class="fa fa-map-marker text-success" aria-hidden="true"></i> '+name+'</h6> <p  class="d-inline text-dark"> Loc: <small>'+city+', '+country+'</small> </p> </div>');
 

@@ -5,10 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Events;
+use App\Models\Services;
 use App\Models\Images;
 use App\Models\User;
-use App\Models\Cart;
-use App\Models\Savelist;
 use Session; 
 use Hash;
 
@@ -105,8 +104,11 @@ $per_hour = $request->per_hour;
 }
 else $per_day = $per_hour =null;
 
+$user_id = Auth::id();
+
 
 Events::create([
+            'user_id' => $user_id,
             'name' => $name,
             'type' => $type,
             'category' => $category,
@@ -142,11 +144,70 @@ Events::create([
 
              } }
 
+        Session::put('success','Service added!');
+        return redirect('home');
+
 }
 
-public function save_service(){
-$events = Events::latest()->get();
-return view('create_event',compact('events'));
+public function save_service(Request $request){
+$s_name = $request->s_name;
+$phone = $request->phone;
+$service_cats = implode(',', $request->service_cats);
+$instant_book = $request->instant_book;
+$s_details = $request->s_details;
+$s_loction = $request->s_loction;
+$max_guests = $request->max_guests;
+$min_guests = $request->min_guests;
+$reservation_start = $request->reservation_start;
+$reservation_end = $request->reservation_end;
+$s_per_day = $request->s_per_day;
+$s_per_hour = $request->s_per_hour;
+
+$user_id = Auth::id();
+
+
+
+Services::create([
+            'user_id' => $user_id,
+            's_name' => $s_name,
+            'phone' => $phone,
+            'service_cats' => $service_cats,
+            'instant_book' => $instant_book,
+            's_details' => $s_details,
+            's_loction' => $s_loction,
+            'max_guests' => $max_guests,
+            'min_guests' => $min_guests,
+            'reservation_start' => $reservation_start,
+            'reservation_end' => $reservation_end,
+            's_per_day' => $s_per_day,
+            's_per_hour' => $s_per_hour
+           ]);
+
+          $image=$request->file('s_posters'); //print_r($image);
+
+          if($image) {
+          foreach ($image as $single_img) { 
+            # code...
+          $uniqid=hexdec(uniqid());
+          $ext=strtolower($single_img->getClientOriginalExtension());
+          $create_name=$uniqid.'.'.$ext;
+          $loc='images/services/';
+          //Move uploaded file
+          $single_img->move($loc, $create_name);
+          $final_img=$loc.$create_name;
+           //getting event id
+          $ev=Services::orderBy('id', 'DESC')->first();
+          $ev_id=($ev->id);
+
+           Images::create([
+            'img_name' => $create_name,
+            's_id' => $ev_id
+           ]);
+
+             } }
+
+        Session::put('success','Service added!');
+        return redirect('home');
 
 }
 

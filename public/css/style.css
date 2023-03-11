@@ -239,12 +239,22 @@ input[type="radio"]{
 }
 
 .btnUp {
+ border: 2px solid gray;
+  color: black;
+  background-color: yellow;
+  padding: 5px 15px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.btnUp2 {
   border: 2px solid gray;
   color: white;
-  background-color: #0eaf5d;
-  padding: 6px 15px;
+  background-color: red;
+  padding: 5px 15px;
   border-radius: 8px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
 }
 

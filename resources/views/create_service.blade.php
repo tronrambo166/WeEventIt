@@ -6,90 +6,398 @@
         <h3 class="text-center font-weight-bold bg-light"><b class="h5 text-success" > {{ Session:: get('success') }}</b> </h3>
         <div class="row pt-4 w-75 m-auto">
            
-           <div class="col-sm-12">
-               <img src="{{asset('images/events/mombasa.jpg')}}" width="100%" height="400px">
-           </div>
                 <div class="col-sm-12">
-                    <div class="row">
-                        <div class="col-sm-8"> 
-                        <h1 class="text-left how my-5 text-dark font-weight-bold">Event Name: {{$event->name}}</h1>
+                  
 
-                        <h5 class="text-secondary my-5">Details: {{$event->details}}</5>
-                        <hr>
-                        <h6 class="my-5 font-weight-bold text-dark">Address: {{$event->address}}</h6>
+            <form action="{{route('create-service-post')}}"  method="post" enctype="multipart/form-data">
+            @csrf   
+                            
+                            
+                <div class="row form-group">
+                    <label class="h3 mb-4" for="name">
+                                <strong>Service Info</strong></label>
+                    <div class="col-sm-6"> 
+                        <div class="row">
+                           <div class="col-sm-4 mt-1"><label class="h6" for="name">
+                                <strong>Service Name</strong></label></div>
+                    
+                    <div class="col-sm-7"> 
+                    <input required="" style="background:#f1f1f5;" class=" form-control border border-none rounded form-group" type="text" name="s_name" id="title" placeholder="Service Name"  /> 
+                    </div>
+                        </div>
                     </div>
 
-                        <div class="col-sm-4">
-                        <div id="choose" class="card my-4 p-3">
-                         <h4 class="my-4 bg-light py-2">Choose Preference</h4>
+                    <div class="col-sm-6"> 
+                        <div class="row">
+                            <div class="col-sm-4 mt-1"><label class="h6" for="name">
+                                <strong>Phone</strong></label></div>
+                    
+                    <div class="col-sm-7"> 
+                    <input required="" type="text" class="form-control" placeholder="Phone" name="phone" value="">                     
+                    </div>
+                        </div>
+                    </div>
+                    
+                </div>
 
-                        <a style="cursor:pointer;" onclick="bookForm('daily');" ><h6 class="text-dark font-weight-bold">I want to be billed daily</h6 ></a> 
 
-                        <a href=""><h6 class="text-dark font-weight-bold">I want to be billed hourly</h6 ></a>
-                         </div>
+                   <div class="row form-group">
+                    
+                    <div class="col-sm-6"> 
+                        <div class="row">
+                           <div class="col-sm-4 mt-1"><label class="h6" for="name">
+                                <strong>Business Description</strong></label></div>
+                    
+                 <div class="col-sm-7"> 
+                    <textarea required="" style="background:#f1f1f5;" class=" form-control border border-none rounded form-group"  name="s_details" id="title"  > Details... </textarea>
+                    </div>
 
-                         <div id="booking" class="collapse card my-4 p-3">
-                         <h4 class="my-4 bg-light py-2 px-5">Booking</h4>
+                        </div>
+                    </div>
+                    <div>
 
-                        <p><h5 class="text-dark ml-2 font-weight-bold">${{$event->per_day}} / Perday</h5></p> 
-                        <input type="hidden" id="per_day" value="{{$event->per_day}}">
-                        <a href="" onclick="window.location.reload();"><h6 class="text-dark font-weight-bold">Choose preferences again</h6 ></a>
+                    <div class="row">
 
-                        <form action="{{route('booking_request')}}" method="post">@csrf
-                        <div class="dropdown show">
-                            <a class="btn btn-light dropdown-toggle w-100" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Select guests
-                            </a>
+                    <div class="col-sm-12 my-4"> 
 
-                         <div class="px-3 dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <p class="font-weight-bold text-dark d-inline"> Adults: 
-                        <input name="adults" value="0" class="w-75 d-inline dropdown-item" /> </p>
+                        <div class="row ">
+                            <div class="col-sm-3 mt-1"><label class="h6" for="name">
+                                <strong>Service Category</strong></label>
+                            </div>
+                    
+<div class="col-sm-8"> 
+               
+  <div class="row rz-buttons rz-no-select rz--style-v1">
+  <div class="rz-btn col-sm-3">
+ <input type="checkbox" name="service_cats[]" value="87">
+ <span class="rz-transition small">Bouncing Castles</span>
+ </div>
+  <div class="rz-btn col-sm-3">
+ <input type="checkbox" name="service_cats[]" value="18">
+ <span class="rz-transition small">Catering</span>
+ </div>
+  <div class="rz-btn col-sm-3">
+ <input type="checkbox" name="service_cats[]" value="19">
+ <span class="rz-transition small">Clowns</span>
+ </div>
+  <div class="rz-btn col-sm-3">
+ <input type="checkbox" name="service_cats[]" value="81">
+ <span class="rz-transition small">Dancers</span>
+ </div>
+  <div class="rz-btn col-sm-3">
+ <input type="checkbox" name="service_cats[]" value="20">
+ <span class="rz-transition small">Deejay</span>
+ </div>
+  <div class="rz-btn col-sm-3">
+ <input type="checkbox" name="service_cats[]" value="21">
+ <span class="rz-transition small">Emcee</span>
+ </div>
+  <div class="rz-btn col-sm-3">
+ <input type="checkbox" name="service_cats[]" value="83">
+ <span class="rz-transition small">Entertainers</span>
+ </div>
+  <div class="rz-btn col-sm-3">
+ <input type="checkbox" name="service_cats[]" value="22">
+ <span class="rz-transition small">Event Chairs</span>
+ </div>
+  <div class="rz-btn col-sm-3">
+ <input type="checkbox" name="service_cats[]" value="88">
+ <span class="rz-transition small">Event Licensing</span>
+ </div>
+  <div class="rz-btn col-sm-3">
+ <input type="checkbox" name="service_cats[]" value="76">
+ <span class="rz-transition small">Face Painting</span>
+ </div>
+  <div class="rz-btn col-sm-3">
+ <input type="checkbox" name="service_cats[]" value="23">
+ <span class="rz-transition small">Generators</span>
+ </div>
+  <div class="rz-btn col-sm-3">
+ <input type="checkbox" name="service_cats[]" value="82">
+ <span class="rz-transition small">Influencer</span>
+ </div>
+  <div class="rz-btn col-sm-3">
+ <input type="checkbox" name="service_cats[]" value="85">
+ <span class="rz-transition small">Interior Decorations</span>
+ </div>
+  <div class="rz-btn col-sm-3">
+ <input type="checkbox" name="service_cats[]" value="90">
+ <span class="rz-transition small">Lighting</span>
+ </div>
+  <div class="rz-btn col-sm-3">
+ <input type="checkbox" name="service_cats[]" value="79">
+ <span class="rz-transition small">Location Manager</span>
+ </div>
+  <div class="rz-btn col-sm-3">
+ <input type="checkbox" name="service_cats[]" value="77">
+ <span class="rz-transition small">Make up artist</span>
+ </div>
+  <div class="rz-btn col-sm-3">
+ <input type="checkbox" name="service_cats[]" value="80">
+ <span class="rz-transition small">Mobile Toilets</span>
+ </div>
+  <div class="rz-btn col-sm-3">
+ <input type="checkbox" name="service_cats[]" value="24">
+ <span class="rz-transition small">Performance Stage</span>
+ </div>
+  <div class="rz-btn col-sm-3">
+ <input type="checkbox" name="service_cats[]" value="84">
+ <span class="rz-transition small">Photography</span>
+ </div>
+  <div class="rz-btn col-sm-3">
+ <input type="checkbox" name="service_cats[]" value="75">
+ <span class="rz-transition small">Security</span>
+ </div>
+  <div class="rz-btn col-sm-3">
+ <input type="checkbox" name="service_cats[]" value="25">
+ <span class="rz-transition small">Soft Drinks</span>
+ </div>
+  <div class="rz-btn col-sm-3">
+ <input type="checkbox" name="service_cats[]" value="26">
+ <span class="rz-transition small">Sound System</span>
+ </div>
+  <div class="rz-btn col-sm-3">
+ <input type="checkbox" name="service_cats[]" value="78">
+ <span class="rz-transition small">Stylist</span>
+ </div>
+  <div class="rz-btn col-sm-3">
+ <input type="checkbox" name="service_cats[]" value="27">
+ <span class="rz-transition small">Tents</span>
+ </div>
+  <div class="rz-btn col-sm-3">
+ <input type="checkbox" name="service_cats[]" value="28">
+ <span class="rz-transition small">Venue Provider</span>
+ </div>
+  <div class="rz-btn col-sm-3">
+ <input type="checkbox" name="service_cats[]" value="86">
+ <span class="rz-transition small">Visual Display, Lighting</span>
+ </div>
+  <div class="rz-btn col-sm-3">
+ <input type="checkbox" name="service_cats[]" value="89">
+ <span class="rz-transition small">Visual Displays</span>
+ </div>
+  <div class="rz-btn col-sm-3">
+ <input type="checkbox" name="service_cats[]" value="29">
+ <span class="rz-transition small">Wines and Spirits</span>
+ </div>
+ </div>
 
-                        <p class="font-weight-bold text-dark d-inline"> Childs: 
-                        <input name="childs" value="0" class="w-75 d-inline dropdown-item" /> </p>
+                    </div>
+                        </div>
+                    </div>
+                    
+                </div>
 
-                        <p class="font-weight-bold text-dark d-inline"> Infants: 
-                        <input style="padding-left: 14px;" name="infants" value="0" class="w-75 d-inline dropdown-item" /> </p>
 
-                          </div>
+
+                   <div class="row my-5 row form-group">
+
+                    <div class="col-sm-12 my-4"> 
+                        <div class="row">
+                           <div class="col-sm-4 mt-1"><label class="h3" for="name">
+                                <strong>Service Gallery</strong></label>
+                               </div>
+                    
+                    <div class="col-sm-7"> 
+                    <div class="upload-btn-wrapper">
+                      <button class="btnUp2">Upload <i class="ml-2 fa fa-arrow-up"></i></button>
+                      <input required="" multiple type="file" name="s_posters[]" />
+                    </div>
+                    </div>
+                        </div>
+                    </div> 
+
+
+                    <div class="col-sm-12 my-4"> 
+                        <label class="h3" for="name">
+                                <strong>Business Location</strong></label>
+
+                        <div class="row">
+                           <div class="col-sm-2 mt-1"><label class="h6" for="name">
+                                <strong>Location</strong></label>
+                               </div>
+                    
+                    <div class="col-sm-7"> 
+                    <input id="searchbox" required="" onkeyup="suggest(this.value);" style="height: 42px;" class=" form-control d-inline" type="text" name="s_loction" value="" placeholder="Enter a location...">
+                    </div>
                         </div>
 
-                       <p><input name="s_day" class="w-100 rounded mt-4 mb-2 py-2 pl-2 font-weight-bold border border-dark"  type="text" placeholder ="Start Date" id="datepicker" value=""></p>
-
-                       <p><input name="e_day" class="w-100 rounded my-2 py-2 pl-2 font-weight-bold border border-dark"  type="text" placeholder ="End Date" id="datepicker2" value=""></p>
-
-
-                       <div class="card p-2">
-                     <div class="row"><p class="w-75 font-weight-bold">Length (days): </p> 
-                      <p id="days" class="font-weight-bold w-25"></p></div>
-
-                      <div class="row"><p class="w-75 font-weight-bold">Price: </p> 
-                      <p id="price" class="font-weight-bold w-25"></p></div>
-
-                      <div class="row"><p class="w-75 font-weight-bold">Service Fee: </p> 
-                      <p id="s_fee" class="font-weight-bold w-25">$200</p></div>
-
-                      <div  class="row"><p class="w-75 font-weight-bold">Total: </p> 
-                      <p id="total_price" class="font-weight-bold w-25"></p></div>
-                      <input id="t_price" type="hidden" name="total" value="">
-                      
-
-                      <div class="row"><p class="w-75 font-weight-bold">Due Now: </p> 
-                      <p id="due" class="font-weight-bold w-25"></p></div>
-                       </div>
-
-                        <button type="submit" class="py-2 w-100 btn-success rounded text-center font-weight-bold">Send Request Booking</button>
+                         <div class="row" style="">
+                                <div id="result_list" class="" style="display: none;left: 166px;width:41%; z-index: 1000;height: 600px;position: absolute;">
+                                    
+                                </div>
+                            </div>
+                    </div> 
 
 
-                        </form>
+                    <div class="col-sm-12 " id="service_price">
+                        <label class="h3" for="name">
+                                <strong>Business Location</strong></label>
 
-                       </div>
+                        <div class="col-sm-6 p-0 my-2">
+                            <div class="row">
+                            <div class="col-sm-5">
+                            <small class="font-weight-bold" style="font-size: 15px;">Per Day Price (USD)</small> 
+                            </div>
+                            <div class="col-sm-7">
+                            <input required="" class="form-control rounded border border-none d-inline" type="number" placeholder="Price" name="s_per_day"></div> </div>
+                            </div>
+
+                            <div class="col-sm-6 p-0 my-2">
+                            <div class="row">
+                            <div class="col-sm-5">
+                            <small class="font-weight-bold" style="font-size: 15px;">Per Hour Price (USD)</small> 
+                            </div>
+                            <div class="col-sm-7">
+                            <input  class="form-control rounded border border-none d-inline" type="number" placeholder="Price" name="s_per_hour" required=""></div> </div>
+                            </div>
+
+                    </div>
 
 
-                      
-                         </div>
+                    <div class="col-sm-12">
+                    <label class="h3" for="name">
+                                <strong>Reservation</strong></label> 
 
-                         </div>
+                        <div class="rz-grid">
+
+ 
+             <div class="rz-form-group rz-field rz-col-12 rz-field-ready" data-type="checkbox" data-storage="request" data-disabled="no" data-heading="Allow instant booking" data-id="instant">
+                <div class="rz-heading row">
+
+                    <label class="rz-checkbox rz-no-select">
+                     <input name="instant_book" type="checkbox" value="0">
+                     <span class="rz-transition"></span>
+                     <em>Allow instant booking?</em>
+                    </label>
+                    </div>
+                    </div>
+
+                     
+                     
+                 <div class="row rz-heading">
+
+                    <div class="col-sm-6 rz-number-type-stepper" data-type="stepper">
+
+                    <label class=" mb-0 font-weight-bold">
+                     Maximum number of guests allowed
+                      </label>
+
+                      <div class="rz-stepper rz--v2">
+                     <input class="form-control"  type="number" name="max_guests" value="1">
+                     
+                     </div>
+                     
+                     </div>
+
+
+
+                    <div class="col-sm-6 rz-number-type-stepper" data-type="stepper">
+
+                    <label class=" mb-0 font-weight-bold">
+                     Minimum number of guests allowed
+                      </label>
+
+                      <div class="rz-stepper rz--v2">
+                     <input class="form-control" type="number" name="min_guests" value="1" min="1" step="1" data-format="<strong>%s</strong>">
+                     
+                     </div>
+                     
+                     </div>
+
+                   
+                    </div>
+
+   
+                    </div>
+                    </div>
+
+                     
+ 
+ <div class="row rz-form-group my-4">
+    <div class="col-sm-5 rz-heading">
+
+   <label class="font-weight-bold">
+   Booking Start Time
+   </label>
+
+ <select required=""class="form-control" name="reservation_start" class="">
+  <option class="form-control" value="">Select</option>
+  <option value="3600">1:00 am</option>
+  <option value="7200">2:00 am</option>
+  <option value="10800">3:00 am</option>
+  <option value="14400">4:00 am</option>
+  <option value="18000">5:00 am</option>
+  <option value="21600">6:00 am</option>
+  <option value="25200">7:00 am</option>
+  <option value="28800">8:00 am</option>
+  <option value="32400">9:00 am</option>
+  <option value="36000">10:00 am</option>
+  <option value="39600">11:00 am</option>
+  <option value="43200">12:00 pm</option>
+  <option value="46800">1:00 pm</option>
+  <option value="50400">2:00 pm</option>
+  <option value="54000">3:00 pm</option>
+  <option value="57600">4:00 pm</option>
+  <option value="61200">5:00 pm</option>
+  <option value="64800">6:00 pm</option>
+  <option value="68400">7:00 pm</option>
+  <option value="72000">8:00 pm</option>
+  <option value="75600">9:00 pm</option>
+  <option value="79200">10:00 pm</option>
+  <option value="82800">11:00 pm</option>
+  <option value="86400">12:00 am</option>
+  </select>
+</div>
+
+
+    <div class="col-sm-5 rz-heading">
+
+   <label class="font-weight-bold">
+   Booking End Time
+   </label>
+
+ <select required="" class="form-control" name="reservation_end" class="">
+  <option class="form-control" value="">Select</option>
+  <option value="3600">1:00 am</option>
+  <option value="7200">2:00 am</option>
+  <option value="10800">3:00 am</option>
+  <option value="14400">4:00 am</option>
+  <option value="18000">5:00 am</option>
+  <option value="21600">6:00 am</option>
+  <option value="25200">7:00 am</option>
+  <option value="28800">8:00 am</option>
+  <option value="32400">9:00 am</option>
+  <option value="36000">10:00 am</option>
+  <option value="39600">11:00 am</option>
+  <option value="43200">12:00 pm</option>
+  <option value="46800">1:00 pm</option>
+  <option value="50400">2:00 pm</option>
+  <option value="54000">3:00 pm</option>
+  <option value="57600">4:00 pm</option>
+  <option value="61200">5:00 pm</option>
+  <option value="64800">6:00 pm</option>
+  <option value="68400">7:00 pm</option>
+  <option value="72000">8:00 pm</option>
+  <option value="75600">9:00 pm</option>
+  <option value="79200">10:00 pm</option>
+  <option value="82800">11:00 pm</option>
+  <option value="86400">12:00 am</option>
+  </select>
+</div>
+
+</div>
+
+</div>
+
+ 
+
+                 <div class="row my-4"> 
+                    <button style="background:#0eaf5d;" class="w-75 m-3 btn text-white font-weight-bold">Publish Event</button></div>
+
+
+            </form>
+
                     </div>
                   
                     
@@ -107,6 +415,13 @@
     function bookForm(shift) {
       $('#choose').hide();
       $('#booking').show();
+    }
+
+    function paid_price() {
+      $('#paid_price').show();  
+    }
+     function free_price() {
+      $('#paid_price').hide(); 
     }
   </script>
 
