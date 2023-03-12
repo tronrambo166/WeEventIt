@@ -48,33 +48,38 @@
   
     <ul class="navbar-nav">
         
-                    <li class="nav-item py-1 px-3 text-light  "><a 
-                        href ="{{route('create-service')}}" class="text-light nav-link">Create service</a></li>
+                    <li class="nav-item py-1 px-3 "><a 
+                        style="color: #fff;" href ="{{route('create-service')}}" class=" nav-link {{ Request::is('create-service') ? 'text-success' : '' }}">Create service</a></li>
 
-                    <li class="nav-item py-1 px-3 text-light"><a href="{{route('create-event')}}" class="text-light nav-link">Create event
+                    <li class="nav-item py-1 px-3 text-light"><a style="color: #fff;" href="{{route('create-event')}}" class=" nav-link {{ Request::is('create-event') ? 'text-success' : '' }}">Create event
                     </a></li>
 
-                    <li class="nav-item py-1 px-3 text-light "><a href="{{route('all-events')}}" class="text-light nav-link">events</a></li>
+                    <li class="nav-item py-1 px-3 text-light "><a style="color: #fff;" href="{{route('all-events')}}" class=" nav-link {{ Request::is('all-events') ? 'text-success' : '' }}">Events</a></li>
 
 
-                    <li class="nav-item py-1 px-3 text-light "><a href="{{route('profile')}}" class="text-light nav-link">Profile</a></li>
+                    <li class="nav-item py-1 px-3 text-light "><a style="color: #fff;" href="{{route('profile')}}" class=" nav-link {{ Request::is('profile') ? 'text-success' : '' }}">Profile</a></li>
 
                     <li class="nav-item py-1 px-3 text-light ">
                         @guest
     @if (Route::has('login'))
 
-     <a class=" d-inline my-0 h5 bg-light mt-2 d-inline-block text-center" href="{{ route('login') }}" ><b>Log In</b></a> @endif
+     <a class="rounded d-inline my-0 h5 bg-light mt-2 d-inline-block text-center" href="{{ route('login') }}" ><b>Log In</b></a> @endif
 
      @else
      {{-- <a class="w-100 my-0 h5 text-info mt-2 d-inline-block text-center" href="{{url('profile/'.$user_id)}}">
         <b>Profile</b></a>  --}}
 
          <div class="text-center w-50 d-inline">  
-            <a class="text-center w-50 d-inline" href="route('logout')" 
-                                    onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                {{ __('Log Out') }}
-            </a> </div>
+           <a class="rounded d-inline my-0 h5 bg-light mt-2 d-inline-block text-center" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                     </div>
         <form  class="d-inline" method="POST" action="{{ route('logout') }}">
                                                                  @csrf</form>
                     
@@ -142,12 +147,10 @@
     
 
     <div class="row">
-  @if (request()->is('search')) 
+  
    @yield('page')
-   @else
    <!-- <router-view></router-view> -->
-   @yield('page')
-    @endif
+
      </div>
 
     

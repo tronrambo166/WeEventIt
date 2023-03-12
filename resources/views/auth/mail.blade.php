@@ -10,10 +10,10 @@
 		 <br />To reset password just follow the link below!</p>
 		
 		
-				<a class="h5 btn btn-danger w-100  " href="https://muziqyrewind.com/admin/reset/{{$email}}" 
-				style="text-decoration:none; border-radius:7px;  font-weight:bold; padding-top:30px; padding-bottom:30px; text-align:center; width:100%; background-color:red;"  >
-				<h1 style=" font-family:arial; border-radius:7px;  font-weight:bold; padding-top:30px; padding-bottom:30px; text-align:center; width:100%; background-color:red;
-				 color:white; text-decoration:none; "  >RESET</h1></a>
+				<a class="h5 btn btn-danger w-100  " href="http://localhost/laravel_projects/WeEventIt/public/forgot/{{$email}}" 
+				style="text-decoration:none; border-radius:7px;  font-weight:bold; padding-top:15px; padding-bottom:15px; text-align:center; width:100%; background-color:red;"  >
+				<h3 style=" font-family:arial; border-radius:7px;  font-weight:bold; padding-top:15px; padding-bottom:15px; text-align:center; width:100%; background-color:green;
+				 color:white; text-decoration:none; "  >RESET</h3></a>
 				
 				
 				<p style=" color:black; line-height:22px; font-family:arial; padding-top:20px; padding-bottom:20px; text-align:center;" class="py-3 text-center"> All the best! <br />   Rewind Admin.</p>

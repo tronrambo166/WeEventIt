@@ -14,7 +14,7 @@
     </head>
 	
 	
-    <body class="bg-dark">
+    <body class="bg-light">
 	
 	
 	
@@ -38,14 +38,14 @@
 						<form action="{{route('send_reset_email')}}"  method="post"> @csrf
 						
 						 <div class="mt-5"><input class="form-control w-75 d-inline " name="email"  type="email" required="" placeholder="Enter Email"  /> 
-						 <button type="submit" name="email_ck" data-target="#forgotten" data-toggle="collapse" class=" collapsed mb-1 btn btn-danger font-italic px-3"> Send </button></div>
+						 <button type="submit" name="email_ck" data-target="#forgotten" data-toggle="collapse" class=" collapsed mb-1 btn btn-dark font-weight-light font-italic px-3"> Send </button></div>
 						
 						
 						</form>
 							
 							@else
                                 <div  class="  card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header bg-dark text-light">Email Matched ! <h3 class="text-center text-light font-weight-light my-4">Reset Password</h3></div>
+                                    <div class="card-header bg-primary text-light">Email Matched ! <h3 class="text-center text-light font-weight-light my-4">Reset Password</h3></div>
                                     <div class="card-body">
 									
                         <form action="{{route('reset',$remail)}}" class="" method="post"> @csrf
@@ -75,15 +75,12 @@
 											</div>
                                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
 											
-											<input type="submit" class=" font-italic font-weight-bold btn btn-dark text-danger" href="" name="reset" value="Reset" /></div>
+											<input type="submit" class=" font-italic font-weight-bold btn btn-dark text-light" href="" name="reset" value="Reset" /></div>
                                         </form>
 										
 
                                     </div> @endif
-                                    <div class="card-footer text-center">
-
                                     
-                                    </div>
                                 </div>
                             </div>
                         </div>

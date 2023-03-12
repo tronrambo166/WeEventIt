@@ -45,18 +45,22 @@ Route::post('admin/logout', 'AdminController@adminLogout')->name('admin/logout')
 //MAIN
 
 Route::get('/', 'PagesController@home'); 
-Route::get('/home', 'PagesController@home')->name('home'); 
+Route::get('/home', 'PagesController@home')->name('home');
+
+Route::group(['middleware'=>['auth']], function(){ 
+
 Route::get('/create-event', 'PagesController@create_event')->name('create-event'); 
 Route::get('/create-service','PagesController@create_service')->name('create-service');
 Route::post('/create-event', 'PagesController@save_event')->name('create-event-post');
 Route::post('/create-service','PagesController@save_service')->name('create-service-post');
-Route::get('all-events', 'PagesController@all_events')->name('all-events');
+Route::get('event/{id}', 'PagesController@event')->name('event');
+Route::post('booking_request', 'PagesController@booking_request')->name('booking_request');
+
+});
 
 Route::get('/get_suggest/{search}', 'PagesController@getAddress')->name('get_suggest');
 Route::get('search', 'PagesController@search')->name('search');
-
-Route::get('event/{id}', 'PagesController@event')->name('event');
-Route::post('booking_request', 'PagesController@booking_request')->name('booking_request');
+Route::get('all-events', 'PagesController@all_events')->name('all-events');
 
 Route::get('forgot/{remail}', 'testController@forgot')->name('forgot');
 Route::post('send_reset_email', 'testController@send_reset_email')->name('send_reset_email');
@@ -70,6 +74,7 @@ Route::get('/details/{id}', 'AdminController@editpro');
 Route::get('profile/{id}', 'PagesController@profile');
 Route::post('profile/edit/{id}', 'PagesController@updateProfile');
 
+Auth::routes();
 
 Route::get('/clear', function() {
    \Artisan::call('config:cache');

@@ -52,14 +52,14 @@
 
                     <div class="w-75 mx-auto">
                         <div>
-                         <h3 class="how py-4 font-weight-bold text-center text-light">How It Works</h3> </a> 
+                         <h3 class="how py-4 font-weight-bold text-center text-light h5 ">How It Works</h3> </a> 
                          </div>
 
                      <div class="row mx-auto">
                         <div class="col-sm-4">
                            <div class="text-center py-3 border border-danger rounded" >
                             <i aria-hidden="true" class="fas fa-3x text-light fa-search-location"></i>
-                            <h4 class="pt-2 text-center text-light">Enter your location</h4>
+                            <h4 class="h5 pt-2 text-center text-light">Enter your location</h4>
                            </div> 
                             
                         </div>
@@ -67,7 +67,7 @@
                         <div class="col-sm-4">
                            <div class="text-center py-3  border border-danger rounded">
                             <i aria-hidden="true" class="fas fa-3x text-light fa-chalkboard-teacher"></i>
-                            <h4 class=" pt-2 text-center text-light">Search For
+                            <h4 class="h5 pt-2 text-center text-light">Search For
                             the Service You Want</h4>
                            </div> 
                             
@@ -76,7 +76,7 @@
                         <div class="col-sm-4">
                            <div class="text-center py-3  border border-danger rounded">
                             <i aria-hidden="true" class="fas fa-3x text-light fa-grin-stars"></i>
-                            <h4 class="pt-2 text-center text-light">Book and Enjoy
+                            <h4 class="h5 pt-2 text-center text-light">Book and Enjoy
                             Your Event</h4>
                            </div> 
                             
