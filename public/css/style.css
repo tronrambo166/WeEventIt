@@ -266,7 +266,7 @@ input[type="radio"]{
   opacity: 0;
 }
 		
-.title{color: black;}
+.title{color: black; font-family: system-ui;}
 hr{color: #a7a3a3;}
 
 .borderRed {border:2px solid #ee2f31;}

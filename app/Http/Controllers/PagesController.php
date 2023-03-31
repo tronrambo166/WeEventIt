@@ -75,7 +75,8 @@ foreach($check_service as $service){ $i=0;
 $events = $results;
 $poster = Images::get();
 
-return view('events',compact('events','poster'));
+$service = $services[0];
+return view('events',compact('events','poster','service'));
 
 }
 
@@ -90,7 +91,8 @@ return view('event',compact('event','poster','rel_events'));
 }
 
 public function all_events(){
-$events = Events::latest('id')->get();
+$events = Events::orderBy('id','DESC')->get();
+
 $poster = Images::get();
 return view('all_events',compact('events','poster'));
 

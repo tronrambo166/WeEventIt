@@ -12,11 +12,13 @@
         <div class="row pt-4  m-auto">
             <div class="col-sm-7">
                 <div class="row">
-                <h1 style="font-family: system-ui;font-weight: 800; font-size: 40px;color:black;" class="mb-4 text-left font-weight-bold">Catering...</h1>
+                <h1 style="font-family: system-ui;font-weight: 800; font-size: 40px;color:black;" class="mb-4 text-left font-weight-bold">{{ucfirst($service)}}...</h1>
 
                <div class="mb-2">  <hr class="my-1"> <a href="" class="font-weight-bold btn px-3 text-light " style="background:#ee2f31 ;"><i class="fa fa-arrow-left mr-2 "></i>Back</a> <hr></div> 
 
-               <div><p class="text-secondary font-weight-bold ml-2">Found 6 results...</p></div>
+               <div><p class="text-secondary font-weight-bold ml-2">
+               @if(count($events) == 0) No results found!
+               @else Found {{count($events)}} results... @endif</p></div>
 
             @foreach($events as $ev)
                 <div class="col-sm-4 mb-2">

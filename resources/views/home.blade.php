@@ -17,10 +17,10 @@
                             <div style="background:black;" class="row py-4 px-0 rounded text-center">
 
                             <div style="    border-radius: 30px 0 0 30px;" class="py-2 col-sm-3 bg-white">
-                              <input id="searchbox" required="" onkeyup="suggest(this.value);" style="height: 42px;" class=" form-control d-inline" type="text" name="search" value="" placeholder="Enter a location..."></div>
+                              <input id="searchbox" required="" onkeyup="suggest(this.value);" style="border: none;height: 42px;" class=" bg-white form-control d-inline" type="text" name="search" value="" placeholder="Enter a location..."></div>
 
                             <div class="py-2 col-sm-3 bg-white"><div class="dropdown">
-                          <button class="w-100 py-2 btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <button class="w-100 py-2 btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                            Add a service
                           </button>
 
@@ -119,7 +119,7 @@
 
                          <div class="py-2 col-sm-3 bg-white">
                            <div class="">
-                          <a class="w-100 py-2 pr-1 btn btn-light "  onclick="date_div();" >
+                          <a class="w-100 py-2 pr-1 btn"  onclick="date_div();" >
                            Add Dates  <i class="float-right mt-1 fa fa-angle-down"> </i>
                           </a>
 
@@ -142,7 +142,7 @@
 
                          <div class="py-2 col-sm-2 bg-white">
                           <div class="">
-                          <a class="w-100 py-2 pr-1 btn btn-light " type="button" id="" onclick="guest_div();"  aria-haspopup="true" aria-expanded="false">
+                          <a class="w-100 py-2 pr-1 btn" type="button" id="" onclick="guest_div();"  aria-haspopup="true" aria-expanded="false">
                            Select Guests  <i class="float-right mt-1 fa fa-angle-down"> </i>
                           </a>
 
@@ -177,7 +177,7 @@
 
 
                             <div style="border-radius: 0 30px 30px 0;" class="col-sm-1 bg-white py-2 ">
-                                <button style="width: 40px;height: 40px;" class="bg-danger rounded-circle float-right" type="submit"><i class="fas text-light fa-search"></i></button>
+                                <button style="background: #ee2f31;border: none;width: 40px;height: 40px;" class=" rounded-circle float-right" type="submit"><i class="fas text-light fa-search"></i></button>
                             </div>
 
 
