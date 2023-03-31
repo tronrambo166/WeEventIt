@@ -23,7 +23,7 @@ use App\Http\Controllers\testController;
 //});
 Route::get('admin', 'AdminController@dashboard');
 Route::get('admin/login', 'AdminController@login')->name('login');
-Route::get('admin/profile', 'AdminController@profile')->name('profile');
+//Route::get('admin/profile', 'AdminController@profile')->name('profile');
 Route::get('admin/dashboard', 'AdminController@dashboard')->name('dashboard');
 Route::get('admin/editprofile', 'AdminController@editprofile')->name('editprofile');
 Route::get('admin/add-product', 'AdminController@addproduct')->name('addproduct');
@@ -55,6 +55,8 @@ Route::post('/create-event', 'PagesController@save_event')->name('create-event-p
 Route::post('/create-service','PagesController@save_service')->name('create-service-post');
 Route::get('event/{id}', 'PagesController@event')->name('event');
 Route::post('booking_request', 'PagesController@booking_request')->name('booking_request');
+Route::get('/profile', 'PagesController@profile')->name('profile');
+Route::post('/up_profile', 'PagesController@up_profile')->name('up_profile');
 
 });
 

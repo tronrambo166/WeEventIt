@@ -15,14 +15,22 @@
                 <div class="col-sm-4">
                    <a href="{{route('event',$ev->id)}}">
                     <div class="listing" style="width:75%;">
-                        <img class="rounded" src="images/events/mombasa.jpg" width="210px">
+                        @foreach($poster as $pos)
+                        @if($pos->ev_id == $ev->id)
+                        <img class="rounded" src="images/events/{{$pos->img_name}}" width="210px" height="118px">
+                        @break @endif
+                        @endforeach
                         <h5 class="mt-3 text-dark">{{$ev->name}}</h5>
-                        <p class="text-secondary">{{$ev->details}}</p>
+                        <p style="height: 42px;" class="text-secondary">
+                            {{substr($ev->details,0,40)}}...</p>
                         <hr>
                         <p><p class=" small text-dark">{{$ev->type}}</p></p>
 
-                        <h5 class="text-danger font-weight-bold">{{$ev->per_hour}}/per hr</h5 >
-                        <h5  class="text-danger font-weight-bold">{{$ev->per_day}}/per day</h5 >
+                        @if($ev->isFree == 'no')
+                        <h6 class="text-danger font-weight-bold">${{$ev->per_hour}} /  hr</h6 >
+                        <h6  class="text-danger font-weight-bold">${{$ev->per_day}} /  day</h6 >
+                        @else
+                        <h6 class="text-danger font-weight-bold">Free</h6> @endif
                     </div> </a>
                     
                 </div>

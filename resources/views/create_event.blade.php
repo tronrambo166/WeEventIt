@@ -33,10 +33,10 @@
                                 <strong>Public or Private</strong></label></div>
                     
                     <div class="col-sm-7"> 
-                    <input type="radio" name="type" value="70">
+                    <input required="" type="radio" name="type" value="private">
 
                      <label class="h6 font-weight-bold">Private</label> <br>
-                     <input class="h4" type="radio" name="type" value="71">
+                     <input required="" class="h4" type="radio" name="type" value="public">
 
                      <label class="h6 font-weight-bold">Public</label>
                     </div>
@@ -54,9 +54,9 @@
                                 <strong>Event Type</strong></label></div>
                     
                     <div class="col-sm-7"> 
-                    <select style="background:#f1f1f5;" class="form-control" name="event_type" class="">
+                    <select required="" style="background:#f1f1f5;" class="form-control" name="event_type" class="">
                       <option class="form-control" value="">Select</option>
-                      <option class="form-control" value="30">Appearance or Signing</option>
+                      <option class="form-control" value="Appearance or Signing">Appearance or Signing</option>
                       <option value="Camp, Trip, or Retreat">Camp, Trip, or Retreat</option>
                       <option value="Class, Training, or Workshop">Class, Training, or Workshop</option>
                       <option value="Concert or Performance">Concert or Performance</option>
@@ -88,7 +88,7 @@
                                 <strong>Event Category</strong></label></div>
                     
                     <div class="col-sm-7"> 
-                     <select style="background:#f1f1f5;" class="form-control" name="category" class="">
+                     <select required="" style="background:#f1f1f5;" class="form-control" name="category" class="">
                       <option class="form-control font-weight-bold" value=""><b>Select</b></option>
                       <option value="Auto, Boat &amp; Air">Auto, Boat &amp; Air</option>
                       <option value="Business &amp; Professional">Business &amp; Professional</option>
@@ -129,9 +129,9 @@
                                 <strong>When the event is scheduled?</strong></label></div>
                     
                     <div class="col-sm-7"> 
-                    <p><input name="s_day" class="w-100 rounded my-1 py-1 pl-2 font-weight-bold border border-dark"  type="text" placeholder ="Start Date" id="datepicker3" value=""></p>
+                    <p><input required="" name="s_day" class="w-100 rounded my-1 py-1 pl-2 font-weight-bold border border-dark"  type="text" placeholder ="Start Date" id="datepicker3" value=""></p>
 
-                    <p><input name="e_day" class="w-100 rounded my-1 py-1 pl-2 font-weight-bold border border-dark"  type="text" placeholder ="End Date" id="datepicker4" value=""></p>
+                    <p><input required="" name="e_day" class="w-100 rounded my-1 py-1 pl-2 font-weight-bold border border-dark"  type="text" placeholder ="End Date" id="datepicker4" value=""></p>
 
                     </div>
                         </div>
@@ -140,12 +140,12 @@
                     <div class="col-sm-6"> 
                         <div class="row">
                             <div class="col-sm-4 mt-1"><label class="h6" for="name">
-                                <strong>Event Category</strong></label></div>
+                                <strong>Event Price Category</strong></label></div>
                   <div class="col-sm-7"> 
-                    <input onclick="free_price();" type="radio" name="isFree" value="yes">
+                    <input required="" onclick="free_price();" type="radio" name="isFree" value="yes">
 
                      <label class="h6 font-weight-bold">Free</label> <br>
-                     <input onclick="paid_price();" class="h4" type="radio" name="isFree" value="no">
+                     <input required="" onclick="paid_price();" class="h4" type="radio" name="isFree" value="no">
 
                     <label class="h6 font-weight-bold">Paid</label>
 
@@ -181,7 +181,7 @@
                     <div class="col-sm-7"> 
                     <div class="upload-btn-wrapper">
                       <button class="btnUp">Upload <i class="ml-2 fa fa-arrow-up"></i></button>
-                      <input required multiple type="file" name="posters[]" />
+                      <input required="" multiple type="file" name="posters[]" />
                     </div>
                     </div>
                         </div>
@@ -214,16 +214,14 @@
             </form>
 
                     </div>
+                     </div>
+                      </div>
+
                   
-                    
-                </div>
-                
-
-            </div>
-
+               
 
             <div class="clear"></div>
-        </div>
+        
 
   <script type="text/javascript">
   

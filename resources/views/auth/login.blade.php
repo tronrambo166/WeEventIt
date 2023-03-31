@@ -126,7 +126,7 @@
 
                             <div class="col-md-6">
                                 <div class="">
-                                <input style="background:#f1f1f5;" id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="fname" value="{{ old('username') }}" required autocomplete="name" autofocus placeholder="First Name">
+                                <input style="background:#f1f1f5;" id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="lname" value="{{ old('username') }}" required autocomplete="name" autofocus placeholder="Last Name">
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">

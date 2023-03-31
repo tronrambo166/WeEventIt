@@ -205,7 +205,7 @@
     height: 700px;
     margin-top: 15px;
     background: url(../images/background.jpg) no-repeat;
-    background-size: 80% 700px;
+    background-size: 90% 700px;
     background-position: center center;
 }
  .how, .how li a{font-family: system-ui;}
@@ -266,6 +266,10 @@ input[type="radio"]{
   opacity: 0;
 }
 		
+.title{color: black;}
+hr{color: #a7a3a3;}
+
+.borderRed {border:2px solid #ee2f31;}
 		
 		
 		

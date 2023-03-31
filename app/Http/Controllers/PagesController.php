@@ -10,6 +10,7 @@ use App\Models\Images;
 use App\Models\User;
 use Session; 
 use Hash;
+use Auth;
 
 
 class PagesController extends Controller
@@ -50,29 +51,48 @@ return response()->json(['data'=>$results]);
 
 
 public function search(Request $request){
-$names = explode(',', $request->search);
-$name = $names[0];
-$city = $names[1];
-$country = $names[2];
+$location = $request->search;
+$services = $request->services;
+$results = array();
+$total_guests = ($request->adults)+($request->childs);
+//$name = $names[0];$city = $names[1];$country = $names[2];
 
-$events = Events::where('name', 'like', '%'.$name.'%')
-->orWhere('name', 'like', '%'.$city.'%')->
-orWhere('address', 'like', '%'.$city.'%')->get();
+$check_service = Services::where('s_loction',$location)->get();
+ //echo '<pre>'; print_r($check_service); echo '<pre>'; exit;
+foreach($services as $serv) {
+foreach($check_service as $service){ $i=0;
+ //$cats = explode(',',$service->service_cats);
+     //echo $service->service_cats.' and '.$serv.'//';
+    if (str_contains(strtolower($service->service_cats), $serv) && $service->max_guests >= $total_guests) {
+        foreach($results as $res)
+        if($res->s_name == $service->s_name) $i++;
+        if($i==0)
+        $results[] = $service;
+}
+ 
+} } //echo '<pre>'; print_r($results); echo '<pre>'; exit;
 
-return view('events',compact('events'));
+$events = $results;
+$poster = Images::get();
+
+return view('events',compact('events','poster'));
 
 }
 
 
 public function event($id){
-$event = Events::where('id',$id)->first();
-return view('event',compact('event'));
+$event = Services::where('id',$id)->first();
+$poster = Images::get();
+
+$rel_events = Services::where('s_loction',$event->s_loction)->get();
+return view('event',compact('event','poster','rel_events'));
 
 }
 
 public function all_events(){
-$events = Events::latest()->get();
-return view('all_events',compact('events'));
+$events = Events::latest('id')->get();
+$poster = Images::get();
+return view('all_events',compact('events','poster'));
 
 }
 
@@ -144,7 +164,7 @@ Events::create([
 
              } }
 
-        Session::put('success','Service added!');
+        Session::put('success','Event added!');
         return redirect('home');
 
 }
@@ -215,31 +235,32 @@ public function booking_request(Request $request){
     return $request->all();
 }
 
-public function updateProfile(Request $req, $id){
+public function up_profile(Request $req){
        
- // if (Auth::attempt(['email' => $request['email'], 'password' => $request['password']])) {
+// if (Auth::attempt(['email' => $request['email'], 'password' => $request['password']])) {
      // return redirect()->route('dashboard');} else return redirect()->back();
-
 // use above or below both are okay
-
-        $user_id=$id;
-        $old=$req->old_pass;
-        $user=DB::table('users')->where('id',$id)->first();
-        if(Hash::check($old, $user->password)) {
-         
-      
-         $data['name'] = $req->name;
+         $user_id=Auth::id();      
+         $data['fname'] = $req->fname;
+         $data['lname'] = $req->lname;
+         $data['name'] =  $req->name;
          $data['email'] = $req->email;
-         $data['password'] = password_hash($req->new_pass,PASSWORD_DEFAULT);
+         if($req->password!=null)
+         $data['password'] = password_hash($req->password,PASSWORD_DEFAULT);
         
-         User::where('id',$id)->update($data);
-         return response()->json(['message' => 'Status Changed!']);
+         User::where('id',$user_id)->update($data);
+         return back()->with('success', 'Updated!');
        
-    } //else { //return response()->json(['message' => 'Status Changed!']); } 
-     
+    }
     
 
-    }
+
+public function profile(){
+$id = Auth::id();
+$user = User::where('id',$id)->first();
+return view('profile',compact('user'));
+
+}
 
 
 

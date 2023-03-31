@@ -69,115 +69,115 @@
                
   <div class="row rz-buttons rz-no-select rz--style-v1">
   <div class="rz-btn col-sm-3">
- <input type="checkbox" name="service_cats[]" value="87">
+ <input type="checkbox" name="service_cats[]" value="Bouncing Castles">
  <span class="rz-transition small">Bouncing Castles</span>
  </div>
   <div class="rz-btn col-sm-3">
- <input type="checkbox" name="service_cats[]" value="18">
+ <input type="checkbox" name="service_cats[]" value="Catering">
  <span class="rz-transition small">Catering</span>
  </div>
   <div class="rz-btn col-sm-3">
- <input type="checkbox" name="service_cats[]" value="19">
+ <input type="checkbox" name="service_cats[]" value="Clowns">
  <span class="rz-transition small">Clowns</span>
  </div>
   <div class="rz-btn col-sm-3">
- <input type="checkbox" name="service_cats[]" value="81">
+ <input type="checkbox" name="service_cats[]" value="Dancers">
  <span class="rz-transition small">Dancers</span>
  </div>
   <div class="rz-btn col-sm-3">
- <input type="checkbox" name="service_cats[]" value="20">
+ <input type="checkbox" name="service_cats[]" value="Deejay">
  <span class="rz-transition small">Deejay</span>
  </div>
   <div class="rz-btn col-sm-3">
- <input type="checkbox" name="service_cats[]" value="21">
+ <input type="checkbox" name="service_cats[]" value="Emcee">
  <span class="rz-transition small">Emcee</span>
  </div>
   <div class="rz-btn col-sm-3">
- <input type="checkbox" name="service_cats[]" value="83">
+ <input type="checkbox" name="service_cats[]" value="Entertainers">
  <span class="rz-transition small">Entertainers</span>
  </div>
   <div class="rz-btn col-sm-3">
- <input type="checkbox" name="service_cats[]" value="22">
+ <input type="checkbox" name="service_cats[]" value="Event Chairs">
  <span class="rz-transition small">Event Chairs</span>
  </div>
   <div class="rz-btn col-sm-3">
- <input type="checkbox" name="service_cats[]" value="88">
+ <input type="checkbox" name="service_cats[]" value="Event Licensing">
  <span class="rz-transition small">Event Licensing</span>
  </div>
   <div class="rz-btn col-sm-3">
- <input type="checkbox" name="service_cats[]" value="76">
+ <input type="checkbox" name="service_cats[]" value="Face Painting">
  <span class="rz-transition small">Face Painting</span>
  </div>
   <div class="rz-btn col-sm-3">
- <input type="checkbox" name="service_cats[]" value="23">
+ <input type="checkbox" name="service_cats[]" value="Generators">
  <span class="rz-transition small">Generators</span>
  </div>
   <div class="rz-btn col-sm-3">
- <input type="checkbox" name="service_cats[]" value="82">
+ <input type="checkbox" name="service_cats[]" value="Influencer">
  <span class="rz-transition small">Influencer</span>
  </div>
   <div class="rz-btn col-sm-3">
- <input type="checkbox" name="service_cats[]" value="85">
+ <input type="checkbox" name="service_cats[]" value="Interior Decorations">
  <span class="rz-transition small">Interior Decorations</span>
  </div>
   <div class="rz-btn col-sm-3">
- <input type="checkbox" name="service_cats[]" value="90">
+ <input type="checkbox" name="service_cats[]" value="Lighting">
  <span class="rz-transition small">Lighting</span>
  </div>
   <div class="rz-btn col-sm-3">
- <input type="checkbox" name="service_cats[]" value="79">
+ <input type="checkbox" name="service_cats[]" value="Location Manager">
  <span class="rz-transition small">Location Manager</span>
  </div>
   <div class="rz-btn col-sm-3">
- <input type="checkbox" name="service_cats[]" value="77">
+ <input type="checkbox" name="service_cats[]" value="Make up artist">
  <span class="rz-transition small">Make up artist</span>
  </div>
   <div class="rz-btn col-sm-3">
- <input type="checkbox" name="service_cats[]" value="80">
+ <input type="checkbox" name="service_cats[]" value="Mobile Toilets">
  <span class="rz-transition small">Mobile Toilets</span>
  </div>
   <div class="rz-btn col-sm-3">
- <input type="checkbox" name="service_cats[]" value="24">
+ <input type="checkbox" name="service_cats[]" value="Performance Stage">
  <span class="rz-transition small">Performance Stage</span>
  </div>
   <div class="rz-btn col-sm-3">
- <input type="checkbox" name="service_cats[]" value="84">
+ <input type="checkbox" name="service_cats[]" value="Photography">
  <span class="rz-transition small">Photography</span>
  </div>
   <div class="rz-btn col-sm-3">
- <input type="checkbox" name="service_cats[]" value="75">
+ <input type="checkbox" name="service_cats[]" value="Security">
  <span class="rz-transition small">Security</span>
  </div>
   <div class="rz-btn col-sm-3">
- <input type="checkbox" name="service_cats[]" value="25">
+ <input type="checkbox" name="service_cats[]" value="Soft Drinks">
  <span class="rz-transition small">Soft Drinks</span>
  </div>
   <div class="rz-btn col-sm-3">
- <input type="checkbox" name="service_cats[]" value="26">
+ <input type="checkbox" name="service_cats[]" value="Sound System">
  <span class="rz-transition small">Sound System</span>
  </div>
   <div class="rz-btn col-sm-3">
- <input type="checkbox" name="service_cats[]" value="78">
+ <input type="checkbox" name="service_cats[]" value="Stylist">
  <span class="rz-transition small">Stylist</span>
  </div>
   <div class="rz-btn col-sm-3">
- <input type="checkbox" name="service_cats[]" value="27">
+ <input type="checkbox" name="service_cats[]" value="Tents">
  <span class="rz-transition small">Tents</span>
  </div>
   <div class="rz-btn col-sm-3">
- <input type="checkbox" name="service_cats[]" value="28">
+ <input type="checkbox" name="service_cats[]" value="Venue Provider">
  <span class="rz-transition small">Venue Provider</span>
  </div>
   <div class="rz-btn col-sm-3">
- <input type="checkbox" name="service_cats[]" value="86">
- <span class="rz-transition small">Visual Display, Lighting</span>
+ <input type="checkbox" name="service_cats[]" value="Visual Display, Lighting">
+ <span class="rz-transition small">Visual Display & Lighting</span>
  </div>
   <div class="rz-btn col-sm-3">
- <input type="checkbox" name="service_cats[]" value="89">
+ <input type="checkbox" name="service_cats[]" value="Visual Displays">
  <span class="rz-transition small">Visual Displays</span>
  </div>
   <div class="rz-btn col-sm-3">
- <input type="checkbox" name="service_cats[]" value="29">
+ <input type="checkbox" name="service_cats[]" value="Wines and Spirits">
  <span class="rz-transition small">Wines and Spirits</span>
  </div>
  </div>
@@ -408,7 +408,6 @@
 
 
             <div class="clear"></div>
-        </div>
 
   <script type="text/javascript">
   

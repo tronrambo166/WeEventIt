@@ -2,7 +2,9 @@
 
 <!DOCTYPE HTML>
 <head>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <title>We Event It</title>
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
      <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
@@ -37,7 +39,7 @@
     <div class="row px-0 " style="background: black;">
     
      <div class="col-sm-4">
-      <a href="home"><img class="" src="{{asset('images/we-event-it-white-web-logo-v2.png')}}" width="216px" height="50px" style="margin-left: 130px;"></a>
+      <a href="home"><img class="" src="{{asset('images/we-event-it-white-web-logo-v2.png')}}" width="216px" height="50px" style="margin-left: 58px;"></a>
      </div>
 
     
@@ -162,22 +164,19 @@
 
 
    <!-- @yield('page') -->
-<div class="container-fluid clearfix py-5 extraDiv"></div>
-<div class="container-fluid clearfix py-5 extraDiv"></div>
 
 <div class="container-fluid extraDiv mt-5 fixed-bottom">
         <div class="container">
         <footer>
             <div class="row py-2">
-                <div class="col-sm-2"> </div>
 
-                 <div class="col-sm-3">
+                 <div class="col-sm-5">
                     
                     <p class="text-light py-2">Copyright © 2023 WEEVENTIT.com
                     </p>
                 </div>
 
-             <div class="col-sm-5 ">
+             <div class="col-sm-7">
               <div class="navbar navbar-expand-sm p-0 float-right">      
                 <ul class="navbar-nav text-light how">
                             <li><a class="text-light" href="https://test.weeventit.com/how-it-works/" target="_blank">Support</a></li>
@@ -261,7 +260,9 @@ dataType:'json',
     function address(place){
         //var place = $(this).attr('data-id');
         document.getElementById('searchbox').value = place;
-        $("#result_list").html('');
+        //$("#result_list").html('');
+       document.getElementById("result_list").style.display='none';
+
 }
 
 </script>
@@ -277,6 +278,8 @@ $( function() {
 $( "#datepicker" ).datepicker();
 $( "#datepicker3" ).datepicker();
 $( "#datepicker4" ).datepicker();
+$( "#datepickerHome1" ).datepicker();
+$( "#datepickerHome2" ).datepicker();
 
 //Start
 $( "#datepicker" ).datepicker({dateFormat: "yy-mm-dd"});
